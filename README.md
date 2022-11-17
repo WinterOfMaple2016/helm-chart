@@ -16,6 +16,7 @@ helm repository, which url is : https://winterofmaple2016.github.io/helm-chart/
       Note:
       if you make any further changes in the Helm cahrt. you must regennerate the index.yaml
       file and the .tgz file with the latest changes
+      helm repo index --url https://winterofmaple2016.github.io/helm-chart/ --merge index.yaml .
 ## 5. Push changed code to Github repository
       git status
       git add .
