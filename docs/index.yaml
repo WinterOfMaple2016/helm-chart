@@ -3,12 +3,12 @@ entries:
   test:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-17T11:34:52.0741735+08:00"
+    created: "2022-11-17T11:43:54.492884+08:00"
     description: A Helm chart for Kubernetes
     digest: c877457a3b22634a5bac9ed4a3207002e43dfd1eb80ba3828afd4c81bc7358c1
     name: test
     type: application
     urls:
-    - test-0.1.0.tgz
+    - https://winterofmaple2016.github.io/helm-chart/test-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-17T11:34:52.0725258+08:00"
+generated: "2022-11-17T11:43:54.491295+08:00"
