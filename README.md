@@ -10,7 +10,7 @@ helm repository, which url is : https://winterofmaple2016.github.io/helm-chart/
 ## 4. Package your helm chart
       i.g 
       mkdir docs
-      package test -d docs/
+      helm package test -d docs/
 ## 5. Create the index.yaml file for the Helm repository
       i.g helm repo index https://winterofmaple2016.github.io/helm-chart/ .
       Note:
