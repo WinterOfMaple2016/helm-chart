@@ -512,11 +512,11 @@ onvif:
     enabled: false
     image:
       # repository is the container reference
-      repository: ghcr.io/project-akri/akri/onvif-discovery
+      repository: ghcr.io/winterofmaple2016/onvif-discovery
       # tag is the container tag
       # onvif-configuration.yaml will default to v(AppVersion)[-dev]
       # with `-dev` added if `useDevelopmentContainers` is specified
-      tag:
+      tag: v0.8.24-20221123_194059
       # pullPolicy is the pull policy
       pullPolicy: ""
     # useNetworkConnection specifies whether the discovery handler should make a networked connection
@@ -793,7 +793,7 @@ udev:
       # tag is the container tag
       # udev-configuration.yaml will default to v(AppVersion)[-dev]
       # with `-dev` added if `useDevelopmentContainers` is specified
-      tag:
+      tag: 
       # pullPolicy is the pull policy
       pullPolicy: ""
     resources:
