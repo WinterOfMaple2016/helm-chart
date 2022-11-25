@@ -516,7 +516,7 @@ onvif:
       # tag is the container tag
       # onvif-configuration.yaml will default to v(AppVersion)[-dev]
       # with `-dev` added if `useDevelopmentContainers` is specified
-      tag: v0.8.24-20221123_194059
+      tag: v0.8.24-20221125_094339-arm64v8
       # pullPolicy is the pull policy
       pullPolicy: ""
     # useNetworkConnection specifies whether the discovery handler should make a networked connection
