@@ -3,33 +3,33 @@ entries:
   akri-test:
   - apiVersion: v2
     appVersion: 0.8.25
-    created: "2022-11-25T10:11:22.7369844+08:00"
+    created: "2022-11-25T10:43:16.3446608+08:00"
     description: A Helm chart for Akri development
     digest: 91cc28921f2ffd73e133360d6a641a41d11ac663a90ff16e1cd1f23242bb1f7e
     name: akri-test
     type: application
     urls:
-    - https://winterofmaple2016.github.io/helmchart/akri-test-0.8.25.tgz
+    - https://winterofmaple2016.github.io/helm-chart/akri-test-0.8.25.tgz
     version: 0.8.25
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-25T10:11:22.7353391+08:00"
+    created: "2022-11-25T10:43:16.3421318+08:00"
     description: A Helm chart for Akri development
     digest: 4b331819eb117ef944e9114960e41d88bee2a005d3925b7c77f83bd70d211881
     name: akri-test
     type: application
     urls:
-    - https://winterofmaple2016.github.io/helmchart/akri-test-0.1.0.tgz
+    - https://winterofmaple2016.github.io/helm-chart/akri-test-0.1.0.tgz
     version: 0.1.0
   test:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-11-25T10:11:22.7369844+08:00"
+    created: "2022-11-25T10:43:16.3446608+08:00"
     description: A Helm chart for Kubernetes
     digest: bd06bb19baa556d71ad7bca4c99cd13787e3bb743b92b032350edb55e5992251
     name: test
     type: application
     urls:
-    - https://winterofmaple2016.github.io/helmchart/test-0.1.0.tgz
+    - https://winterofmaple2016.github.io/helm-chart/test-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-25T10:11:22.7324406+08:00"
+generated: "2022-11-25T10:43:16.3388538+08:00"
