@@ -7,6 +7,8 @@ helm repository, which url is : https://winterofmaple2016.github.io/helm-chart/
 ## 2. Clone the GitHub repository
 ## 3. Create a helm chart
       i.g helm create test
+      or copy your existing app/service Helm chart inside the helm-chart
+      helm lint helm(file name)
 ## 4. Package your helm chart
       i.g 
       mkdir docs
