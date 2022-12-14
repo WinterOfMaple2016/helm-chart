@@ -2,17 +2,17 @@ name: Helm
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-    - .github/workflows/run-helm.yml
-    - akri-test/**
-    - version.txt
+      - .github/workflows/run-helm.yml
+      - akri-test/**
+      - version.txt
   pull_request:
     branches: [main]
     paths:
-    - .github/workflows/run-helm.yml
-    - akri-test/**
-    - version.txt
+      - .github/workflows/run-helm.yml
+      - akri-test/**
+      - version.txt
   release:
     types:
       - published
@@ -30,7 +30,7 @@ jobs:
         with:
           persist-credentials: false
       - uses: azure/setup-helm@v1
-      
+
       - name: Lint helm chart
         run: |
           helm lint akri-test --values helm-lint-values.yaml && echo "lint finished successfully" || echo ::warning::"lint found issues"
@@ -66,7 +66,7 @@ jobs:
           sed -i s/"useDevelopmentContainers: true"/"useDevelopmentContainers: true"/g ./akri-test/values.yaml
       - name: Lint helm chart
         run: helm lint akri-test --values helm-lint-values.yaml && echo "lint finished successfully" || echo ::warning::"lint found issues"
-      
+
       - name: Ensure chart builds when setting expected values
         run: helm template akri-test --values helm-lint-values.yaml
 
@@ -110,15 +110,15 @@ jobs:
         with:
           name: index
           path: index.yaml
-  
+
       - name: Create push with new akri chart for gh-pages
         if: (github.event_name == 'release')
         shell: bash
         run: git add akri-$(cat version.txt).tgz
-      - name: Create push with new akri-dev chart for gh-pages
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startsWith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
-        shell: bash
-        run: git add akri-dev-$(cat version.txt).tgz
+      # - name: Create push with new akri-dev chart for gh-pages
+      #   if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startsWith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
+      #   shell: bash
+      #   run: git add akri-dev-$(cat version.txt).tgz
 
       - name: Push gh-pages
         if: (github.event_name == 'release') || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startsWith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
