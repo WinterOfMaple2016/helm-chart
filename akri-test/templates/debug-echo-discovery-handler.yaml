@@ -14,7 +14,11 @@ spec:
     spec:
       containers:
       - name: akri-debug-echo-discovery
+        {{- if .Values.useLatestContainers }}
         image: {{ printf "%s:%s" .Values.debugEcho.discovery.image.repository (default "latest" .Values.debugEcho.discovery.image.tag) | quote }}
+        {{- else }}
+        image: {{ printf "%s:%s" .Values.debugEcho.discovery.image.repository (default (printf "v%s" .Chart.AppVersion) .Values.debugEcho.discovery.image.tag) | quote }}
+        {{- end }}
         {{- with .Values.debugEcho.discovery.image.pullPolicy }}
         imagePullPolicy: {{ . }}
         {{- end}}

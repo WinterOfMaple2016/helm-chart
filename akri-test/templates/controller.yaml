@@ -18,7 +18,11 @@ spec:
       {{- end }}
       containers:
       - name: akri-controller
+        {{- if .Values.useLatestContainers }}
         image: {{ printf "%s:%s" .Values.controller.image.repository (default "latest" .Values.controller.image.tag) | quote }}
+        {{- else }}
+        image: {{ printf "%s:%s" .Values.controller.image.repository (default (printf "v%s" .Chart.AppVersion) .Values.controller.image.tag) | quote }}
+        {{- end }}
         {{- with .Values.controller.image.pullPolicy }}
         imagePullPolicy: {{ . }}
         {{- end }}

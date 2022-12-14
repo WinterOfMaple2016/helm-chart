@@ -16,7 +16,11 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: akri-udev-discovery
+        {{- if .Values.useLatestContainers }}
         image: {{ printf "%s:%s" .Values.udev.discovery.image.repository (default "latest" .Values.udev.discovery.image.tag) | quote }}
+        {{- else }}
+        image: {{ printf "%s:%s" .Values.udev.discovery.image.repository (default (printf "v%s" .Chart.AppVersion) .Values.udev.discovery.image.tag) | quote }}
+        {{- end }}
         {{- with .Values.udev.discovery.image.pullPolicy }}
         imagePullPolicy: {{ . }}
         {{- end}}
