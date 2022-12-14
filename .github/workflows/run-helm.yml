@@ -75,7 +75,7 @@ jobs:
           mkdir -p /tmp/helm/repo
           cp version.txt /tmp/helm/repo/version.txt
       - name: Create new helm package
-        run: helm package --dependency-update --destination /tmp/helm/repo deployment/helm
+        run: helm package --dependency-update --destination /tmp/helm/repo akri-test
 
       - name: Inspect helm package
         run: helm inspect all $(find /tmp/helm/repo -name "akri-*.tgz")
