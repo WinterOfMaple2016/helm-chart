@@ -118,7 +118,7 @@ jobs:
       - name: create push with new akri-dev chart for gh-pages
         if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startswith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
         shell: bash
-        run: git add akri-dev-$(cat version.txt).tgz
+        run: git add akri-$(cat version.txt).tgz
 
       - name: Push gh-pages
         if: (github.event_name == 'release') || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startsWith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
