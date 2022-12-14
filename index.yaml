@@ -3,7 +3,7 @@ entries:
   akri:
   - apiVersion: v2
     appVersion: 0.8.24
-    created: "2022-12-14T03:14:02.592247731Z"
+    created: "2022-12-14T03:40:24.696476791Z"
     description: A Helm chart for Akri
     digest: 960e085b84b4247d00e4212d24f7a865e96d1215a63bbd71609e9b7f802bf762
     name: akri
@@ -14,7 +14,7 @@ entries:
   akri-dev-test:
   - apiVersion: v2
     appVersion: 0.8.29
-    created: "2022-12-14T03:14:02.59486458Z"
+    created: "2022-12-14T03:40:24.700873927Z"
     description: A Helm chart for Akri development development
     digest: 15f1f51a7fc43f3208ceb06a3c28ffc395ea755881bc57a87c12cf92abfec637
     name: akri-dev-test
@@ -34,8 +34,18 @@ entries:
     version: 0.8.25
   akri-test:
   - apiVersion: v2
+    appVersion: 0.8.29
+    created: "2022-12-14T03:40:24.710147036Z"
+    description: A Helm chart for Akri development development
+    digest: 6f637d66e5b283d6f5e6ef77a971ea49fea9386906cc7a0471f0ee14a42508e1
+    name: akri-test
+    type: application
+    urls:
+    - https://winterofmaple2016.github.io/helm-chart/akri-test-0.8.29.tgz
+    version: 0.8.29
+  - apiVersion: v2
     appVersion: 0.8.25
-    created: "2022-12-14T03:14:02.601050994Z"
+    created: "2022-12-14T03:40:24.707315919Z"
     description: A Helm chart for Akri development
     digest: 082e34ddfd9fe353f5c65177bd2740058213deaece8b97f26fb4a27265ab36a3
     name: akri-test
@@ -45,7 +55,7 @@ entries:
     version: 0.8.25
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-12-14T03:14:02.597677331Z"
+    created: "2022-12-14T03:40:24.703843854Z"
     description: A Helm chart for Akri development
     digest: 4b331819eb117ef944e9114960e41d88bee2a005d3925b7c77f83bd70d211881
     name: akri-test
@@ -56,7 +66,7 @@ entries:
   test:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-12-14T03:14:02.601607004Z"
+    created: "2022-12-14T03:40:24.71073468Z"
     description: A Helm chart for Kubernetes
     digest: 9db417360ab86e011d2bbfeae7aa6658cbb67575fbb411fedc09bb7d9b421762
     name: test
@@ -64,4 +74,4 @@ entries:
     urls:
     - https://winterofmaple2016.github.io/helm-chart/test-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-14T03:14:02.584096681Z"
+generated: "2022-12-14T03:40:24.693238044Z"
