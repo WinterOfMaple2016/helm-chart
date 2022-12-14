@@ -3,7 +3,7 @@ entries:
   akri:
   - apiVersion: v2
     appVersion: 0.8.24
-    created: "2022-12-14T07:55:51.482840241Z"
+    created: "2022-12-14T08:01:03.273813412Z"
     description: A Helm chart for Akri
     digest: 960e085b84b4247d00e4212d24f7a865e96d1215a63bbd71609e9b7f802bf762
     name: akri
@@ -35,9 +35,9 @@ entries:
   akri-test:
   - apiVersion: v2
     appVersion: 0.8.29
-    created: "2022-12-14T07:55:51.489486794Z"
+    created: "2022-12-14T08:01:03.279158834Z"
     description: A Helm chart for Akri development development
-    digest: 05e5bf63c67e7d433213e1120f2852f149c085005dda893fe58c48b93b89d9bf
+    digest: e6bece3c362774b56b5ffb2ad55352dcab0edf0a065ae20b0cf693356da090e0
     name: akri-test
     type: application
     urls:
@@ -45,7 +45,7 @@ entries:
     version: 0.8.29
   - apiVersion: v2
     appVersion: 0.8.25
-    created: "2022-12-14T07:55:51.486830373Z"
+    created: "2022-12-14T08:01:03.276395222Z"
     description: A Helm chart for Akri development
     digest: 082e34ddfd9fe353f5c65177bd2740058213deaece8b97f26fb4a27265ab36a3
     name: akri-test
@@ -74,4 +74,4 @@ entries:
     urls:
     - https://winterofmaple2016.github.io/helm-chart/test-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-14T07:55:51.48020682Z"
+generated: "2022-12-14T08:01:03.2709418Z"
