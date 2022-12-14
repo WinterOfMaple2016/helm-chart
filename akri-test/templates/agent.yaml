@@ -27,11 +27,7 @@ spec:
       containers:
       - name: akri-agent
         {{- $repository := ternary .Values.agent.image.fullRepository .Values.agent.image.repository .Values.agent.full -}}
-        {{- if .Values.useLatestContainers }}
         image: {{ printf "%s:%s" $repository (default "latest" .Values.agent.image.tag) | quote }}
-        {{- else }}
-        image: {{ printf "%s:%s" $repository (default (printf "v%s" .Chart.AppVersion) .Values.agent.image.tag) | quote }}
-        {{- end }}
         {{- with .Values.agent.image.pullPolicy }}
         imagePullPolicy: {{ . }}
         {{- end }}
