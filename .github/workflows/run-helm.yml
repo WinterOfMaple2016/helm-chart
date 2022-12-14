@@ -112,7 +112,7 @@ jobs:
           path: index.yaml
 
       - name: Create push with new akri chart for gh-pages
-        if: (github.event_name == 'release')
+        if: (github.event_name == 'release') && (github.event_name == 'push')
         shell: bash
         run: git add akri-$(cat version.txt).tgz
       # - name: Create push with new akri-dev chart for gh-pages
