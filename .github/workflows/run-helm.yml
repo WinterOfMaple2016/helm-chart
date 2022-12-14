@@ -52,16 +52,16 @@ jobs:
       # One for our releases (akri) and one for our merged PRs (akri-dev).  'akri' should only be created for
       # our releases and should default to not use dev containers.  'akri-dev'
       # should build for any merged PR and should default to use our dev containers.
-      - name: When event_name == release, create akri chart
+      - name: When event_name == release, create akri-test chart
         if: (github.event_name == 'release')
         run: |
-          sed -i s/"name: akri"/"name: akri"/g ./akri-test/Chart.yaml
+          sed -i s/"name: akri-test"/"name: akri-test"/g ./akri-test/Chart.yaml
           sed -i s/"description: A Helm chart for Akri"/"description: A Helm chart for Akri releases"/g ./akri-test/Chart.yaml
           sed -i s/"useDevelopmentContainers: true"/"useDevelopmentContainers: false"/g ./akri-test/values.yaml
-      - name: When event_name != release, create akri-dev chart
+      - name: When event_name != release, create akri-test-dev chart
         if: (github.event_name != 'release')
         run: |
-          sed -i s/"name: akri"/"name: akri-dev"/g ./akri-test/Chart.yaml
+          sed -i s/"name: akri-test"/"name: akri-test"/g ./akri-test/Chart.yaml
           sed -i s/"description: A Helm chart for Akri"/"description: A Helm chart for Akri development"/g ./akri-test/Chart.yaml
           sed -i s/"useDevelopmentContainers: true"/"useDevelopmentContainers: true"/g ./akri-test/values.yaml
       - name: Lint helm chart
@@ -78,7 +78,7 @@ jobs:
         run: helm package --dependency-update --destination /tmp/helm/repo akri-test
 
       - name: Inspect helm package
-        run: helm inspect all $(find /tmp/helm/repo -name "akri-*.tgz")
+        run: helm inspect all $(find /tmp/helm/repo -name "akri-test*.tgz")
 
       - name: Upload new helm package as artifact
         if: (github.event_name == 'release') || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startsWith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
@@ -115,10 +115,10 @@ jobs:
         if: (github.event_name == 'release') && (github.event_name == 'push')
         shell: bash
         run: git add akri-test-$(cat version.txt).tgz
-      - name: create push with new akri-dev-test chart for gh-pages
+      - name: create push with new akri-test-dev chart for gh-pages
         if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startswith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
         shell: bash
-        run: git add akri-dev-test-$(cat version.txt).tgz
+        run: git add akri-test-$(cat version.txt).tgz
 
       - name: Push gh-pages
         if: (github.event_name == 'release') || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startsWith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
