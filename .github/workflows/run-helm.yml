@@ -78,7 +78,7 @@ jobs:
         run: helm package --dependency-update --destination /tmp/helm/repo akri-test
 
       - name: Inspect helm package
-        run: helm inspect all $(find /tmp/helm/repo -name "akri-test-*.tgz")
+        run: helm inspect all $(find /tmp/helm/repo -name "akri-*.tgz")
 
       - name: Upload new helm package as artifact
         if: (github.event_name == 'release') || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (startsWith(github.event_name, 'pull_request') && github.event.action == 'closed' && github.event.pull_request.merged == true && github.ref != 'refs/heads/main')
