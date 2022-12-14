@@ -63,7 +63,7 @@ jobs:
         run: |
           sed -i s/"name: akri-test"/"name: akri-test"/g ./akri-test/Chart.yaml
           sed -i s/"description: A Helm chart for Akri"/"description: A Helm chart for Akri development"/g ./akri-test/Chart.yaml
-          sed -i s/"useDevelopmentContainers: true"/"useDevelopmentContainers: false"/g ./akri-test/values.yaml
+          sed -i s/"useDevelopmentContainers: true"/"useDevelopmentContainers: true"/g ./akri-test/values.yaml
       - name: Lint helm chart
         run: helm lint akri-test --values helm-lint-values.yaml && echo "lint finished successfully" || echo ::warning::"lint found issues"
 

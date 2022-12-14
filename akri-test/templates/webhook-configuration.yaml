@@ -50,18 +50,10 @@ items:
           {{- end }}
           containers:
           - name: webhook
-            {{- if .Values.useDevelopmentContainers }}
-            {{- if .Values.useLatestContainers }}
-            image: {{ printf "%s:latest-dev" .Values.webhookConfiguration.image.repository | quote }}
-            {{- else }}
-            image: {{ printf "%s:%s" .Values.webhookConfiguration.image.repository (default (printf "v%s-dev" .Chart.AppVersion) .Values.webhookConfiguration.image.tag) | quote }}
-            {{- end }}
-            {{- else }}
             {{- if .Values.useLatestContainers }}
             image: {{ printf "%s:latest" .Values.webhookConfiguration.image.repository | quote }}
             {{- else }}
             image: {{ printf "%s:%s" .Values.webhookConfiguration.image.repository (default (printf "v%s" .Chart.AppVersion) .Values.webhookConfiguration.image.tag) | quote }}
-            {{- end }}
             {{- end }}
             imagePullPolicy: {{ .Values.webhookConfiguration.image.pullPolicy }}
             resources:
